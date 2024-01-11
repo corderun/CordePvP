@@ -1,0 +1,7 @@
+name: CordePvP
+version: '${project.version}'
+main: org.corderun.cordepvp.CordePvP
+api-version: '1.20'
+commands:
+  pvp: {}
+  cordepvp: {}

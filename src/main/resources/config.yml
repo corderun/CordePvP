@@ -1,0 +1,35 @@
+messages:
+  finding: '&c&lPVP &7| &fИгрок &c%player% &fищет соперника для PVP на РТП &a/pvp'
+  pvp-find: "&c&lPVP &7| &fВы начали поиск соперника для PVP на РТП \n &a/pvp leave &f- покинуть очередь"
+  finding-anon: '&c&lPVP &7| &fИгрок &c??? &fищет соперника для PVP на РТП &a/pvp'
+  already: '&c&lPVP &7| &fВы уже ищете соперника'
+  inviter-offline: '&c&lPVP &7| &fВаш соперник сейчас оффлайн. PVP отменено'
+  wait: '&c&lPVP &7| &fПодождите немного перед использованием команды'
+  found: '&c&lPVP &7| &fСоперник найден: &c%player%'
+  leave: '&c&lPVP &7| &fВы вышли из поиска соперника для PVP на РТП'
+  not-leave: '&c&lPVP &7| &fВы не находитесь в очереди'
+  sender-invite: '&c&lPVP &7| &fВы отправили запрос на PVP игроку &c%player%'
+  target-invite: |-
+    &c&lPVP &7| &f&fИгрок &c%player% &fотправил запрос PVP на РТП
+    &f&fУ вас есть 30 секунд на принятие: &a/pvp %player%
+  target-offline: '&c&lPVP &7| &fИгрок не найден'
+  already-invite: '&c&lPVP &7| &fВы уже отправили запрос. Дождитесь 30 секунд для отправки еще одного'
+  toggle-success: '&c&lPVP &7| &fВы успешно отключили приглашения на пвп'
+  toggle-off: '&c&lPVP &7| &fВы успешно включили приглашения на пвп'
+  bc-success: '&c&lPVP &7| &fВы успешно отключили уведомления об очереди на пвп'
+  bc-off: '&c&lPVP &7| &fВы успешно включили уведомления об очереди на пвп'
+  inviter-toggle: '&c&lPVP &7| &fИгрок отключил запросы на пвп'
+  self-toggle: '&c&lPVP &7| &fУ вас отключены запросы на пвп. Вы не можете отправлять другим'
+  self-invite: '&c&lPVP &7| &fСам с собой драться хочешь? Ну такое...'
+  zero-invites: '&c&lPVP &7| &fУ вас нет запросов на пвп'
+  help:
+    heading: '&c&lPvP'
+    pvp: '&c/pvp &f- встать в очередь на пвп на ртп.'
+    anon: '&c/pvp anon &f- встать анонимно в очередь на пвп на ртп.'
+    pvp-player: '&c/pvp invite <Никнейм> &f- вызвать игрока на пвп на ртп.'
+    accept: '&c/pvp accept &f- принять вызов от последнего игрока'
+    accept-name: '&c/pvp accept <Никнейм> &f- принять вызов от игрока'
+    leave: '&c/pvp leave &f- выйти из очереди.'
+    toggle: '&c/pvp toggle &f- отключить приглашения на пвп.'
+    bc: '&c/pvp bc &f- отключить уведомления об очереди на пвп.'
+    help: '&c/pvp help &f- помощь по командам.'
