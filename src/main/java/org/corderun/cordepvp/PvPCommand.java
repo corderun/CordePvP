@@ -39,8 +39,13 @@ public class PvPCommand implements CommandExecutor {
         FileConfiguration playerstoggle = YamlConfiguration.loadConfiguration(playersfile);
         List<String> bclist = playerstoggle.getStringList("Bc");
         List<String> togglelist = playerstoggle.getStringList("Toggle");
+        Player player = (Player) sender;
 
         if(GSitAPI.isSitting((Player) sender)) {
+            sender.sendMessage(config.getString("messages.sitting").replace("&", "§"));
+            return true;
+        }
+        if (!player.getPassengers().isEmpty()) {
             sender.sendMessage(config.getString("messages.sitting").replace("&", "§"));
             return true;
         }
@@ -51,8 +56,6 @@ public class PvPCommand implements CommandExecutor {
                 sender.sendMessage("Только игрок может использовать эту команду.");
                 return true;
             }
-
-            Player player = (Player) sender;
 
             if (command.getName().equalsIgnoreCase("pvp")) {
                 if(((Player) sender).hasMetadata("inviting")){
@@ -139,7 +142,6 @@ public class PvPCommand implements CommandExecutor {
             return true;
         }
 
-        Player player = (Player) sender;
 
         if(args[0].equalsIgnoreCase("named")){
             if(((Player) sender).hasMetadata("inviting")){
