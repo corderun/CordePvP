@@ -33,7 +33,7 @@ public final class CordePvP extends JavaPlugin {
             @Override
             public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
                 if(args.length==0){
-                    sender.sendMessage("§cCordePvP 1.1");
+                    sender.sendMessage("§cCordePvP 1.1.1");
                     sender.sendMessage("§fАвтор: §cCorderuN");
                     sender.sendMessage("§fСпециально для §cMeltarion Network");
                     return true;
@@ -56,7 +56,7 @@ public final class CordePvP extends JavaPlugin {
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         List<String> tabCompletions = new ArrayList<>();
         if (args.length == 1) {
-            tabCompletions.add("anon");
+            tabCompletions.add("named");
             tabCompletions.add("leave");
             tabCompletions.add("help");
             tabCompletions.add("bc");

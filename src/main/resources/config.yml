@@ -1,8 +1,9 @@
 messages:
-  finding: '&c&lPVP &7| &fИгрок &c%player% &fищет соперника для PVP на РТП &a/pvp'
+  finding: '&c&lPVP &7| &f&m%amount%&f игрок(а) ищет соперника для PVP на РТП &a/pvp'
   pvp-find: "&c&lPVP &7| &fВы начали поиск соперника для PVP на РТП \n &a/pvp leave &f- покинуть очередь"
-  finding-anon: '&c&lPVP &7| &fИгрок &c??? &fищет соперника для PVP на РТП &a/pvp'
+  finding-named: '&c&lPVP &7| &fИгрок &c%player% &fищет соперника для PVP на РТП &a/pvp'
   already: '&c&lPVP &7| &fВы уже ищете соперника'
+  sitting: '&c&lPVP &7| &fВы не можете использовать /pvp, когда вы сидите или на вас кто-то сидит'
   inviter-offline: '&c&lPVP &7| &fВаш соперник сейчас оффлайн. PVP отменено'
   wait: '&c&lPVP &7| &fПодождите немного перед использованием команды'
   found: '&c&lPVP &7| &fСоперник найден: &c%player%'
@@ -11,7 +12,7 @@ messages:
   sender-invite: '&c&lPVP &7| &fВы отправили запрос на PVP игроку &c%player%'
   target-invite: |-
     &c&lPVP &7| &f&fИгрок &c%player% &fотправил запрос PVP на РТП
-    &f&fУ вас есть 30 секунд на принятие: &a/pvp %player%
+    &f&fУ вас есть 30 секунд на принятие: &a/pvp accept %player%
   target-offline: '&c&lPVP &7| &fИгрок не найден'
   already-invite: '&c&lPVP &7| &fВы уже отправили запрос. Дождитесь 30 секунд для отправки еще одного'
   toggle-success: '&c&lPVP &7| &fВы успешно отключили приглашения на пвп'
@@ -24,8 +25,8 @@ messages:
   zero-invites: '&c&lPVP &7| &fУ вас нет запросов на пвп'
   help:
     heading: '&c&lPvP'
-    pvp: '&c/pvp &f- встать в очередь на пвп на ртп.'
-    anon: '&c/pvp anon &f- встать анонимно в очередь на пвп на ртп.'
+    pvp: '&c/pvp &f- анонимно встать в очередь на пвп на ртп.'
+    named: '&c/pvp named &f- встать с никнеймом в очередь на пвп на ртп.'
     pvp-player: '&c/pvp invite <Никнейм> &f- вызвать игрока на пвп на ртп.'
     accept: '&c/pvp accept &f- принять вызов от последнего игрока'
     accept-name: '&c/pvp accept <Никнейм> &f- принять вызов от игрока'

@@ -1,5 +1,6 @@
 package org.corderun.cordepvp;
 
+import dev.geco.gsit.api.GSitAPI;
 import nl.marido.deluxecombat.api.DeluxeCombatAPI;
 import org.bukkit.*;
 import org.bukkit.command.Command;
@@ -39,7 +40,13 @@ public class PvPCommand implements CommandExecutor {
         List<String> bclist = playerstoggle.getStringList("Bc");
         List<String> togglelist = playerstoggle.getStringList("Toggle");
 
+        if(GSitAPI.isSitting((Player) sender)) {
+            sender.sendMessage(config.getString("messages.sitting").replace("&", "§"));
+            return true;
+        }
+
         if (args.length == 0) {
+
             if (!(sender instanceof Player)) {
                 sender.sendMessage("Только игрок может использовать эту команду.");
                 return true;
@@ -49,7 +56,7 @@ public class PvPCommand implements CommandExecutor {
 
             if (command.getName().equalsIgnoreCase("pvp")) {
                 if(((Player) sender).hasMetadata("inviting")){
-                    sender.sendMessage(config.getString("messages.already-invite"));
+                    sender.sendMessage(config.getString("messages.already-invite").replace("&", "§"));
                     return true;
                 }
                 if (players.contains(player)) {
@@ -62,7 +69,7 @@ public class PvPCommand implements CommandExecutor {
 
                     for (Player playeronline : Bukkit.getOnlinePlayers()) {
                         if(!bclist.contains(playeronline.getName())){
-                            playeronline.sendMessage(config.getString("messages.finding").replace("&", "§").replace("%player%", sender.getName()));
+                            playeronline.sendMessage(config.getString("messages.finding").replace("&", "§").replace("%amount%", String.valueOf(players.size())));
                         }
                     }
 
@@ -134,7 +141,7 @@ public class PvPCommand implements CommandExecutor {
 
         Player player = (Player) sender;
 
-        if(args[0].equalsIgnoreCase("anon")){
+        if(args[0].equalsIgnoreCase("named")){
             if(((Player) sender).hasMetadata("inviting")){
                 sender.sendMessage(config.getString("messages.already-invite").replace("&", "§"));
                 return true;
@@ -149,7 +156,7 @@ public class PvPCommand implements CommandExecutor {
                 for (int i = 0; i < Bukkit.getOnlinePlayers().size(); i++) {
                     Player playeronline = players.get(i);
                     if(!togglelist.contains(playeronline.getName())){
-                        playeronline.sendMessage(config.getString("messages.finding-anon").replace("&", "§"));
+                        playeronline.sendMessage(config.getString("messages.finding-named").replace("&", "§").replace("%player%", sender.getName()));
                     }
                 }
                 new BukkitRunnable() {
@@ -191,7 +198,7 @@ public class PvPCommand implements CommandExecutor {
         if(args[0].equalsIgnoreCase("help")){
             sender.sendMessage(config.getString("messages.help.heading").replace("&", "§"));
             sender.sendMessage(config.getString("messages.help.pvp").replace("&", "§"));
-            sender.sendMessage(config.getString("messages.help.anon").replace("&", "§"));
+            sender.sendMessage(config.getString("messages.help.named").replace("&", "§"));
             sender.sendMessage(config.getString("messages.help.pvp-player").replace("&", "§"));
             sender.sendMessage(config.getString("messages.help.accept").replace("&", "§"));
             sender.sendMessage(config.getString("messages.help.accept-name").replace("&", "§"));
